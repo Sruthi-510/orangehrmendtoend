@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="2" parallel="tests" name="Failed suite [Automation_testing]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="com.qa.orangeendtoend.Listners.AllurListeners"/>
+  </listeners>
+  <test thread-count="2" parallel="tests" name="edge(failed)">
+    <parameter name="browserNamexml" value="browser"/>
+    <parameter name="headlessModexml" value="headless"/>
+    <parameter name="privateModexml" value="incognito"/>
+    <classes>
+      <class name="com.qa.orangeendtoend.testcases.DashboardTest">
+        <methods>
+          <include name="ClickModule"/>
+          <include name="launchingBrowser"/>
+          <include name="precondition"/>
+          <include name="terminateBrowser"/>
+        </methods>
+      </class> <!-- com.qa.orangeendtoend.testcases.DashboardTest -->
+      <class name="com.qa.orangeendtoend.testcases.AddcandidateTest">
+        <methods>
+          <include name="launchingBrowser"/>
+          <include name="ClickModuleandDetails"/>
+          <include name="precondition"/>
+          <include name="terminateBrowser"/>
+        </methods>
+      </class> <!-- com.qa.orangeendtoend.testcases.AddcandidateTest -->
+      <class name="com.qa.orangeendtoend.testcases.AddvaccanciesTest">
+        <methods>
+          <include name="ClickModuleandDetails"/>
+          <include name="launchingBrowser"/>
+          <include name="precondition"/>
+          <include name="terminateBrowser"/>
+        </methods>
+      </class> <!-- com.qa.orangeendtoend.testcases.AddvaccanciesTest -->
+      <class name="com.qa.orangeendtoend.testcases.PIMTest">
+        <methods>
+          <include name="precondition"/>
+          <include name="launchingBrowser"/>
+          <include name="ClickModuleandDetails"/>
+          <include name="terminateBrowser"/>
+        </methods>
+      </class> <!-- com.qa.orangeendtoend.testcases.PIMTest -->
+    </classes>
+  </test> <!-- edge(failed) -->
+  <test thread-count="2" parallel="tests" name="chrome(failed)">
+    <parameter name="browserNamexml" value="browser"/>
+    <parameter name="headlessModexml" value="headless"/>
+    <parameter name="privateModexml" value="incognito"/>
+    <classes>
+      <class name="com.qa.orangeendtoend.testcases.DashboardTest">
+        <methods>
+          <include name="ClickModule"/>
+          <include name="launchingBrowser"/>
+          <include name="precondition"/>
+          <include name="terminateBrowser"/>
+        </methods>
+      </class> <!-- com.qa.orangeendtoend.testcases.DashboardTest -->
+      <class name="com.qa.orangeendtoend.testcases.AddvaccanciesTest">
+        <methods>
+          <include name="ClickModuleandDetails"/>
+          <include name="launchingBrowser"/>
+          <include name="precondition"/>
+          <include name="terminateBrowser"/>
+        </methods>
+      </class> <!-- com.qa.orangeendtoend.testcases.AddvaccanciesTest -->
+      <class name="com.qa.orangeendtoend.testcases.PIMTest">
+        <methods>
+          <include name="precondition"/>
+          <include name="launchingBrowser"/>
+          <include name="ClickModuleandDetails"/>
+          <include name="terminateBrowser"/>
+        </methods>
+      </class> <!-- com.qa.orangeendtoend.testcases.PIMTest -->
+    </classes>
+  </test> <!-- chrome(failed) -->
+</suite> <!-- Failed suite [Automation_testing] -->

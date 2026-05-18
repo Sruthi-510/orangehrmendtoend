@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="10" passed="10" failed="0" skipped="0">
+  <reporter-output>
+    <line>
+      <![CDATA[Running chrome incognitomode]]>
+    </line>
+    <line>
+      <![CDATA[Running chrome incognitomode]]>
+    </line>
+    <line>
+      <![CDATA[Running chrome incognitomode]]>
+    </line>
+    <line>
+      <![CDATA[Running chrome incognitomode]]>
+    </line>
+    <line>
+      <![CDATA[Running chrome incognitomode]]>
+    </line>
+    <line>
+      <![CDATA[Running chrome incognitomode]]>
+    </line>
+    <line>
+      <![CDATA[Running chrome incognitomode]]>
+    </line>
+    <line>
+      <![CDATA[Running chrome incognitomode]]>
+    </line>
+    <line>
+      <![CDATA[Running chrome incognitomode]]>
+    </line>
+    <line>
+      <![CDATA[Running chrome incognitomode]]>
+    </line>
+  </reporter-output>
+  <suite started-at="2026-05-16T16:19:52 AEST" name="Automation_testing" finished-at="2026-05-16T16:22:31 AEST" duration-ms="158696">
+    <groups>
+    </groups>
+    <test started-at="2026-05-16T16:19:52 AEST" name="edge" finished-at="2026-05-16T16:22:28 AEST" duration-ms="156084">
+      <class name="com.qa.orangeendtoend.testcases.DashboardTest">
+        <test-method is-config="true" signature="launchingBrowser(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.orangeendtoend.testcases.DashboardTest@333d4a8c]" started-at="2026-05-16T16:22:01 AEST" name="launchingBrowser" finished-at="2026-05-16T16:22:13 AEST" duration-ms="12478" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Running chrome incognitomode]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- launchingBrowser -->
+        <test-method is-config="true" signature="precondition()[pri:0, instance:com.qa.orangeendtoend.testcases.DashboardTest@333d4a8c]" started-at="2026-05-16T16:22:13 AEST" name="precondition" finished-at="2026-05-16T16:22:16 AEST" duration-ms="2906" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- precondition -->
+        <test-method signature="ClickModule()[pri:0, instance:com.qa.orangeendtoend.testcases.DashboardTest@333d4a8c]" started-at="2026-05-16T16:22:16 AEST" name="ClickModule" finished-at="2026-05-16T16:22:25 AEST" duration-ms="8677" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ClickModule -->
+        <test-method is-config="true" signature="terminateBrowser()[pri:0, instance:com.qa.orangeendtoend.testcases.DashboardTest@333d4a8c]" started-at="2026-05-16T16:22:25 AEST" name="terminateBrowser" finished-at="2026-05-16T16:22:28 AEST" duration-ms="3187" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- terminateBrowser -->
+      </class> <!-- com.qa.orangeendtoend.testcases.DashboardTest -->
+      <class name="com.qa.orangeendtoend.testcases.LoginTest">
+        <test-method is-config="true" signature="launchingBrowser(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.orangeendtoend.testcases.LoginTest@6a8658ff]" started-at="2026-05-16T16:21:08 AEST" name="launchingBrowser" finished-at="2026-05-16T16:21:21 AEST" duration-ms="12671" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Running chrome incognitomode]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- launchingBrowser -->
+        <test-method signature="doLogin()[pri:0, instance:com.qa.orangeendtoend.testcases.LoginTest@6a8658ff]" started-at="2026-05-16T16:21:21 AEST" name="doLogin" finished-at="2026-05-16T16:21:25 AEST" duration-ms="4642" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- doLogin -->
+        <test-method is-config="true" signature="terminateBrowser()[pri:0, instance:com.qa.orangeendtoend.testcases.LoginTest@6a8658ff]" started-at="2026-05-16T16:21:25 AEST" name="terminateBrowser" finished-at="2026-05-16T16:21:27 AEST" duration-ms="1435" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- terminateBrowser -->
+      </class> <!-- com.qa.orangeendtoend.testcases.LoginTest -->
+      <class name="com.qa.orangeendtoend.testcases.AddcandidateTest">
+        <test-method is-config="true" signature="launchingBrowser(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.orangeendtoend.testcases.AddcandidateTest@6e2829c7]" started-at="2026-05-16T16:19:52 AEST" name="launchingBrowser" finished-at="2026-05-16T16:20:07 AEST" duration-ms="15055" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Running chrome incognitomode]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- launchingBrowser -->
+        <test-method is-config="true" signature="precondition()[pri:0, instance:com.qa.orangeendtoend.testcases.AddcandidateTest@6e2829c7]" started-at="2026-05-16T16:20:07 AEST" name="precondition" finished-at="2026-05-16T16:20:10 AEST" duration-ms="2912" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- precondition -->
+        <test-method signature="ClickModuleandDetails()[pri:0, instance:com.qa.orangeendtoend.testcases.AddcandidateTest@6e2829c7]" started-at="2026-05-16T16:20:10 AEST" name="ClickModuleandDetails" finished-at="2026-05-16T16:20:28 AEST" duration-ms="17399" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ClickModuleandDetails -->
+        <test-method is-config="true" signature="terminateBrowser()[pri:0, instance:com.qa.orangeendtoend.testcases.AddcandidateTest@6e2829c7]" started-at="2026-05-16T16:20:28 AEST" name="terminateBrowser" finished-at="2026-05-16T16:20:32 AEST" duration-ms="4668" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- terminateBrowser -->
+      </class> <!-- com.qa.orangeendtoend.testcases.AddcandidateTest -->
+      <class name="com.qa.orangeendtoend.testcases.AddvaccanciesTest">
+        <test-method is-config="true" signature="launchingBrowser(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.orangeendtoend.testcases.AddvaccanciesTest@1c742ed4]" started-at="2026-05-16T16:21:27 AEST" name="launchingBrowser" finished-at="2026-05-16T16:21:40 AEST" duration-ms="13408" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Running chrome incognitomode]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- launchingBrowser -->
+        <test-method is-config="true" signature="precondition()[pri:0, instance:com.qa.orangeendtoend.testcases.AddvaccanciesTest@1c742ed4]" started-at="2026-05-16T16:21:40 AEST" name="precondition" finished-at="2026-05-16T16:21:56 AEST" duration-ms="15384" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- precondition -->
+        <test-method signature="ClickModuleandDetails()[pri:0, instance:com.qa.orangeendtoend.testcases.AddvaccanciesTest@1c742ed4]" started-at="2026-05-16T16:21:56 AEST" name="ClickModuleandDetails" finished-at="2026-05-16T16:21:59 AEST" duration-ms="3176" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ClickModuleandDetails -->
+        <test-method is-config="true" signature="terminateBrowser()[pri:0, instance:com.qa.orangeendtoend.testcases.AddvaccanciesTest@1c742ed4]" started-at="2026-05-16T16:21:59 AEST" name="terminateBrowser" finished-at="2026-05-16T16:22:01 AEST" duration-ms="2046" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- terminateBrowser -->
+      </class> <!-- com.qa.orangeendtoend.testcases.AddvaccanciesTest -->
+      <class name="com.qa.orangeendtoend.testcases.PIMTest">
+        <test-method is-config="true" signature="launchingBrowser(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.orangeendtoend.testcases.PIMTest@3feb2dda]" started-at="2026-05-16T16:20:32 AEST" name="launchingBrowser" finished-at="2026-05-16T16:20:47 AEST" duration-ms="14945" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Running chrome incognitomode]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- launchingBrowser -->
+        <test-method is-config="true" signature="precondition()[pri:0, instance:com.qa.orangeendtoend.testcases.PIMTest@3feb2dda]" started-at="2026-05-16T16:20:47 AEST" name="precondition" finished-at="2026-05-16T16:21:02 AEST" duration-ms="14822" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- precondition -->
+        <test-method signature="ClickModuleandDetails()[pri:0, instance:com.qa.orangeendtoend.testcases.PIMTest@3feb2dda]" started-at="2026-05-16T16:21:02 AEST" name="ClickModuleandDetails" finished-at="2026-05-16T16:21:06 AEST" duration-ms="4256" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ClickModuleandDetails -->
+        <test-method is-config="true" signature="terminateBrowser()[pri:0, instance:com.qa.orangeendtoend.testcases.PIMTest@3feb2dda]" started-at="2026-05-16T16:21:06 AEST" name="terminateBrowser" finished-at="2026-05-16T16:21:08 AEST" duration-ms="1566" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- terminateBrowser -->
+      </class> <!-- com.qa.orangeendtoend.testcases.PIMTest -->
+    </test> <!-- edge -->
+    <test started-at="2026-05-16T16:19:52 AEST" name="chrome" finished-at="2026-05-16T16:22:31 AEST" duration-ms="158696">
+      <class name="com.qa.orangeendtoend.testcases.DashboardTest">
+        <test-method is-config="true" signature="launchingBrowser(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.orangeendtoend.testcases.DashboardTest@4d1bf319]" started-at="2026-05-16T16:22:05 AEST" name="launchingBrowser" finished-at="2026-05-16T16:22:19 AEST" duration-ms="14110" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Running chrome incognitomode]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- launchingBrowser -->
+        <test-method is-config="true" signature="precondition()[pri:0, instance:com.qa.orangeendtoend.testcases.DashboardTest@4d1bf319]" started-at="2026-05-16T16:22:19 AEST" name="precondition" finished-at="2026-05-16T16:22:22 AEST" duration-ms="2980" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- precondition -->
+        <test-method signature="ClickModule()[pri:0, instance:com.qa.orangeendtoend.testcases.DashboardTest@4d1bf319]" started-at="2026-05-16T16:22:22 AEST" name="ClickModule" finished-at="2026-05-16T16:22:30 AEST" duration-ms="7701" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ClickModule -->
+        <test-method is-config="true" signature="terminateBrowser()[pri:0, instance:com.qa.orangeendtoend.testcases.DashboardTest@4d1bf319]" started-at="2026-05-16T16:22:30 AEST" name="terminateBrowser" finished-at="2026-05-16T16:22:31 AEST" duration-ms="787" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- terminateBrowser -->
+      </class> <!-- com.qa.orangeendtoend.testcases.DashboardTest -->
+      <class name="com.qa.orangeendtoend.testcases.LoginTest">
+        <test-method is-config="true" signature="launchingBrowser(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.orangeendtoend.testcases.LoginTest@4f32a3ad]" started-at="2026-05-16T16:21:08 AEST" name="launchingBrowser" finished-at="2026-05-16T16:21:20 AEST" duration-ms="11912" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Running chrome incognitomode]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- launchingBrowser -->
+        <test-method signature="doLogin()[pri:0, instance:com.qa.orangeendtoend.testcases.LoginTest@4f32a3ad]" started-at="2026-05-16T16:21:20 AEST" name="doLogin" finished-at="2026-05-16T16:21:23 AEST" duration-ms="2835" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- doLogin -->
+        <test-method is-config="true" signature="terminateBrowser()[pri:0, instance:com.qa.orangeendtoend.testcases.LoginTest@4f32a3ad]" started-at="2026-05-16T16:21:23 AEST" name="terminateBrowser" finished-at="2026-05-16T16:21:26 AEST" duration-ms="3719" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- terminateBrowser -->
+      </class> <!-- com.qa.orangeendtoend.testcases.LoginTest -->
+      <class name="com.qa.orangeendtoend.testcases.AddcandidateTest">
+        <test-method is-config="true" signature="launchingBrowser(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.orangeendtoend.testcases.AddcandidateTest@48075da3]" started-at="2026-05-16T16:19:52 AEST" name="launchingBrowser" finished-at="2026-05-16T16:20:07 AEST" duration-ms="14897" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Running chrome incognitomode]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- launchingBrowser -->
+        <test-method is-config="true" signature="precondition()[pri:0, instance:com.qa.orangeendtoend.testcases.AddcandidateTest@48075da3]" started-at="2026-05-16T16:20:07 AEST" name="precondition" finished-at="2026-05-16T16:20:12 AEST" duration-ms="5099" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- precondition -->
+        <test-method signature="ClickModuleandDetails()[pri:0, instance:com.qa.orangeendtoend.testcases.AddcandidateTest@48075da3]" started-at="2026-05-16T16:20:12 AEST" name="ClickModuleandDetails" finished-at="2026-05-16T16:20:31 AEST" duration-ms="18614" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ClickModuleandDetails -->
+        <test-method is-config="true" signature="terminateBrowser()[pri:0, instance:com.qa.orangeendtoend.testcases.AddcandidateTest@48075da3]" started-at="2026-05-16T16:20:31 AEST" name="terminateBrowser" finished-at="2026-05-16T16:20:33 AEST" duration-ms="1633" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- terminateBrowser -->
+      </class> <!-- com.qa.orangeendtoend.testcases.AddcandidateTest -->
+      <class name="com.qa.orangeendtoend.testcases.AddvaccanciesTest">
+        <test-method is-config="true" signature="launchingBrowser(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.orangeendtoend.testcases.AddvaccanciesTest@6b695b06]" started-at="2026-05-16T16:21:26 AEST" name="launchingBrowser" finished-at="2026-05-16T16:21:36 AEST" duration-ms="9389" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Running chrome incognitomode]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- launchingBrowser -->
+        <test-method is-config="true" signature="precondition()[pri:0, instance:com.qa.orangeendtoend.testcases.AddvaccanciesTest@6b695b06]" started-at="2026-05-16T16:21:36 AEST" name="precondition" finished-at="2026-05-16T16:21:53 AEST" duration-ms="17151" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- precondition -->
+        <test-method signature="ClickModuleandDetails()[pri:0, instance:com.qa.orangeendtoend.testcases.AddvaccanciesTest@6b695b06]" started-at="2026-05-16T16:21:53 AEST" name="ClickModuleandDetails" finished-at="2026-05-16T16:21:57 AEST" duration-ms="3938" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ClickModuleandDetails -->
+        <test-method is-config="true" signature="terminateBrowser()[pri:0, instance:com.qa.orangeendtoend.testcases.AddvaccanciesTest@6b695b06]" started-at="2026-05-16T16:21:57 AEST" name="terminateBrowser" finished-at="2026-05-16T16:22:05 AEST" duration-ms="8134" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- terminateBrowser -->
+      </class> <!-- com.qa.orangeendtoend.testcases.AddvaccanciesTest -->
+      <class name="com.qa.orangeendtoend.testcases.PIMTest">
+        <test-method is-config="true" signature="launchingBrowser(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.qa.orangeendtoend.testcases.PIMTest@71075444]" started-at="2026-05-16T16:20:33 AEST" name="launchingBrowser" finished-at="2026-05-16T16:20:47 AEST" duration-ms="14696" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[false]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[true]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+            <line>
+              <![CDATA[Running chrome incognitomode]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- launchingBrowser -->
+        <test-method is-config="true" signature="precondition()[pri:0, instance:com.qa.orangeendtoend.testcases.PIMTest@71075444]" started-at="2026-05-16T16:20:47 AEST" name="precondition" finished-at="2026-05-16T16:21:01 AEST" duration-ms="13800" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- precondition -->
+        <test-method signature="ClickModuleandDetails()[pri:0, instance:com.qa.orangeendtoend.testcases.PIMTest@71075444]" started-at="2026-05-16T16:21:01 AEST" name="ClickModuleandDetails" finished-at="2026-05-16T16:21:05 AEST" duration-ms="4022" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ClickModuleandDetails -->
+        <test-method is-config="true" signature="terminateBrowser()[pri:0, instance:com.qa.orangeendtoend.testcases.PIMTest@71075444]" started-at="2026-05-16T16:21:05 AEST" name="terminateBrowser" finished-at="2026-05-16T16:21:08 AEST" duration-ms="2638" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- terminateBrowser -->
+      </class> <!-- com.qa.orangeendtoend.testcases.PIMTest -->
+    </test> <!-- chrome -->
+  </suite> <!-- Automation_testing -->
+</testng-results>

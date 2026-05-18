@@ -1,0 +1,6 @@
+com\qa\orangeendtoend\testcases\AddcandidateTest.class
+com\qa\orangeendtoend\testcases\LoginTest.class
+com\qa\orangeendtoend\basetest\BaseTest.class
+com\qa\orangeendtoend\testcases\DashboardTest.class
+com\qa\orangeendtoend\testcases\PIMTest.class
+com\qa\orangeendtoend\testcases\AddvaccanciesTest.class

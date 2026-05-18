@@ -1,0 +1,19 @@
+#compiled java classes
+target/
+bin/
+
+#Eclipse specific file
+.settings/
+.project
+.classpath
+
+#testngoutputs
+test-output/
+temp-testng.xml
+
+#logfiles
+*.logfiles
+
+#os generated files
+.DS-Store
+Thumbs.db
