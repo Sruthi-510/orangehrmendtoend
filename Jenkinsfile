@@ -1,68 +1,130 @@
+
 pipeline {
 agent any
 
-parameters {
-choice(name: 'ENV', choices: ['QA', 'Staging', 'Production'], description: 'Select the environment to deploy to')
-booleanParam(name: 'RUN_SONAR', defaultValue: false, description: 'Check to run SonarQube Code Analysis')
+tools {
+maven 'Maven'
+jdk 'JDK21'
 }
 
-environment {
-// Define global variables here if needed
-APP_NAME = 'my-awesome-app'
+parameters {
+string(name: 'suiteXmlFile', defaultValue: 'testng.xml')
+choice(name: 'browser', choices: ['chrome', 'firefox', 'edge'])
+booleanParam(name: 'headless', defaultValue: true)
+booleanParam(name: 'incognito', defaultValue: true)
+string(name: 'testUrl', defaultValue: 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login;)
 }
 
 stages {
-stage('Fetch Code') {
+
+stage('Clean Workspace') {
 steps {
-echo "Fetching latest code for ${env.APP_NAME}..."
+cleanWs()
 }
 }
 
-stage('Build') {
+stage('Checkout Code') {
 steps {
-echo 'Building application...'
-// If using Maven: sh 'mvn clean package -DskipTests'
-// If using NodeJS: sh 'npm install && npm run build'
-sh 'echo "Build step completed successfully"'
+git branch: 'main', url:' https://github.com/Sruthi-510/orangehrmendtoend.git;
 }
 }
 
-stage('Unit Tests') {
+stage('Build Project') {
 steps {
-echo 'Running Unit Tests...'
-// If using Maven: sh 'mvn test'
-// If using NodeJS: sh 'npm test'
-sh 'echo "Tests passed!"'
+bat 'mvn clean compile'
 }
 }
 
-stage('Code Analysis') {
-when {
-expression { return params.RUN_SONAR }
-}
+stage('Execute UI Tests') {
 steps {
-echo 'Running SonarQube Analysis...'
-// sh 'mvn sonar:sonar'
+script {
+try {
+bat """
+mvn test ^
+-DsuiteXmlFile=${params.suiteXmlFile} ^
+-Dbrowser=${params.browser} ^
+-Dheadless=${params.headless} ^
+-Dincognito=${params.incognito} ^
+-DtestUrl=${params.testUrl}
+"""
+} catch (Exception e) {
+echo "Tests failed but continuing..."
+}
+}
 }
 }
 
-stage('Deploy') {
+stage('Re-run Failed Tests') {
 steps {
-echo "Deploying ${env.APP_NAME} to the ${params.ENV} environment..."
-// Add your deployment commands/scripts here
+script {
+def failedSuitePath = 'test-output/testng-failed.xml'
+
+if (!fileExists(failedSuitePath)) {
+failedSuitePath = 'target/surefire-reports/testng-failed.xml'
+}
+
+if (fileExists(failedSuitePath)) {
+echo "Re-running failed tests from: ${failedSuitePath}"
+
+bat """
+mvn test ^
+-DsuiteXmlFile=${failedSuitePath} ^
+-Dbrowser=${params.browser} ^
+-Dheadless=${params.headless} ^
+-Dincognito=${params.incognito} ^
+-DtestUrl=${params.testUrl}
+"""
+} else {
+echo "No failed tests found"
+}
+}
+}
+}
+stage('Debug ChainTest Report'){
+           steps{
+               bat 'dir target /s'
+           }
+       }
+stage('Publish ChainTest HTML Report'){
+   steps{
+       publishHTML([
+           allowMissing: true,
+           alwaysLinkToLastBuild: false,
+           keepAll: true,
+           reportDir: 'target/chaintest',
+           reportFiles: 'index.html',
+           reportName: 'HTML Regression ChainTest Report',
+           reportTitles: 'OrangehrmUI_Automation'
+       ])
+   }
+}
+stage('Archive Reports') {
+steps {
+archiveArtifacts artifacts: 'target/**/*', fingerprint: true
 }
 }
 }
 
 post {
 always {
-echo 'Cleaning up workspace...'
+echo 'Execution Completed'
+
+junit 'target/surefire-reports/*.xml'
+
+allure includeProperties: false,
+jdk: '',
+results: [[path: 'target/allure-results']]
 }
+
 success {
-echo 'Pipeline executed perfectly!'
+echo 'All Tests Passed'
 }
+
 failure {
-echo 'Pipeline failed. Sending alert notification...'
+echo 'Some Tests Failed'
 }
 }
 }
+
+
+
