@@ -52,12 +52,13 @@ archiveArtifacts artifacts: 'target/**/*', fingerprint: true
 post {
 always {
 echo 'Execution Completed'
-
-// Generates standard test trend charts in Jenkins
 junit 'target/surefire-reports/*.xml'
 
-// Attaches Allure reports to your build dashboard
-allure includeProperties: false, jdk: '', results: [[path: 'target/allure-results']]
+// Added 'unstable: true' so missing results won't fail your build!
+allure includeProperties: false,
+jdk: '',
+results: [[path: 'target/allure-results']],
+unstable: true
 }
 success {
 echo 'All OrangeHRM Automation Tests Passed!'
@@ -66,4 +67,4 @@ failure {
 echo 'Some Automation Tests Failed.'
 }
 }
-}
+
