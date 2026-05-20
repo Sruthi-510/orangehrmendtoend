@@ -11,7 +11,7 @@ string(name: 'suiteXmlFile', defaultValue: 'testng.xml', description: 'TestNG Su
 choice(name: 'browser', choices: ['chrome', 'firefox', 'edge'])
 booleanParam(name: 'headless', defaultValue: true)
 booleanParam(name: 'incognito', defaultValue: true)
-string(name: 'testUrl', defaultValue: 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login', description: 'OrangeHRM Application URL')
+string(name: 'testUrl', defaultValue: 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login;, description: 'OrangeHRM Application URL')
 }
 
 stages {
@@ -52,13 +52,12 @@ archiveArtifacts artifacts: 'target/**/*', fingerprint: true
 post {
 always {
 echo 'Execution Completed'
+
+// Generates standard test trend charts in Jenkins
 junit 'target/surefire-reports/*.xml'
 
-// Added 'unstable: true' so missing results won't fail your build!
-allure includeProperties: false,
-jdk: '',
-results: [[path: 'target/allure-results']],
-unstable: true
+// Attaches Allure reports to your build dashboard
+allure includeProperties: false, jdk: '', results: [[path: 'target/allure-results']]
 }
 success {
 echo 'All OrangeHRM Automation Tests Passed!'
@@ -67,4 +66,4 @@ failure {
 echo 'Some Automation Tests Failed.'
 }
 }
-
+}
