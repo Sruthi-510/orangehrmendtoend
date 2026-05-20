@@ -11,7 +11,7 @@ string(name: 'suiteXmlFile', defaultValue: 'testng.xml', description: 'TestNG Su
 choice(name: 'browser', choices: ['chrome', 'firefox', 'edge'])
 booleanParam(name: 'headless', defaultValue: true)
 booleanParam(name: 'incognito', defaultValue: true)
-string(name: 'testUrl', defaultValue: 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login;, description: 'OrangeHRM Application URL')
+string(name: 'testUrl', defaultValue: 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login', description: 'OrangeHRM Application URL')
 }
 
 stages {
