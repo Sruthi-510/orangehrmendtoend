@@ -1,4 +1,3 @@
-
 pipeline {
 agent any
 
@@ -8,11 +7,11 @@ jdk 'JDK21'
 }
 
 parameters {
-string(name: 'suiteXmlFile', defaultValue: 'testng.xml')
+string(name: 'suiteXmlFile', defaultValue: 'testng.xml', description: 'TestNG Suite XML file name')
 choice(name: 'browser', choices: ['chrome', 'firefox', 'edge'])
 booleanParam(name: 'headless', defaultValue: true)
 booleanParam(name: 'incognito', defaultValue: true)
-string(name: 'testUrl', defaultValue: 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login;)
+string(name: 'testUrl', defaultValue: 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login';, description: 'OrangeHRM Application URL')
 }
 
 stages {
@@ -25,7 +24,8 @@ cleanWs()
 
 stage('Checkout Code') {
 steps {
-git branch: 'main', url:' https://github.com/Sruthi-510/orangehrmendtoend.git;
+// Pulls code directly from your OrangeHRM repository's main branch
+git branch: 'main', url: 'https://github.com/Sruthi-510/orangehrmendtoend.git';
 }
 }
 
@@ -37,53 +37,11 @@ bat 'mvn clean compile'
 
 stage('Execute UI Tests') {
 steps {
+// Single line batch execution prevents Groovy compilation and Sandbox errors
 bat "mvn test -DsuiteXmlFile=${params.suiteXmlFile} -Dbrowser=${params.browser} -Dheadless=${params.headless} -Dincognito=${params.incognito} -DtestUrl=${params.testUrl}"
 }
 }
-stage('Re-run Failed Tests') {
-steps {
-script {
-def failedSuitePath = 'test-output/testng-failed.xml'
 
-if (!fileExists(failedSuitePath)) {
-failedSuitePath = 'target/surefire-reports/testng-failed.xml'
-}
-
-if (fileExists(failedSuitePath)) {
-echo "Re-running failed tests from: ${failedSuitePath}"
-
-bat """
-mvn test ^
--DsuiteXmlFile=${failedSuitePath} ^
--Dbrowser=${params.browser} ^
--Dheadless=${params.headless} ^
--Dincognito=${params.incognito} ^
--DtestUrl=${params.testUrl}
-"""
-} else {
-echo "No failed tests found"
-}
-}
-}
-}
-stage('Debug ChainTest Report'){
-           steps{
-               bat 'dir target /s'
-           }
-       }
-stage('Publish ChainTest HTML Report'){
-   steps{
-       publishHTML([
-           allowMissing: true,
-           alwaysLinkToLastBuild: false,
-           keepAll: true,
-           reportDir: 'target/chaintest',
-           reportFiles: 'index.html',
-           reportName: 'HTML Regression ChainTest Report',
-           reportTitles: 'OrangehrmUI_Automation'
-       ])
-   }
-}
 stage('Archive Reports') {
 steps {
 archiveArtifacts artifacts: 'target/**/*', fingerprint: true
@@ -95,22 +53,17 @@ post {
 always {
 echo 'Execution Completed'
 
+// Generates standard test trend charts in Jenkins
 junit 'target/surefire-reports/*.xml'
 
-allure includeProperties: false,
-jdk: '',
-results: [[path: 'target/allure-results']]
+// Attaches Allure reports to your build dashboard
+allure includeProperties: false, jdk: '', results: [[path: 'target/allure-results']]
 }
-
 success {
-echo 'All Tests Passed'
+echo 'All OrangeHRM Automation Tests Passed!'
 }
-
 failure {
-echo 'Some Tests Failed'
+echo 'Some Automation Tests Failed.'
 }
 }
 }
-
-
-
