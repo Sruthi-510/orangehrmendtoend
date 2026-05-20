@@ -2,6 +2,7 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Automation_testing" thread-count="2" parallel="tests">
 <listeners>
+<listener class-name="io.qameta.allure.testng.AllureTestng"></listener>
 <listener class-name="com.aventstack.chaintest.plugins.ChainTestListener"></listener>
 <listener class-name="com.qa.orangeendtoend.Listners.AllurListeners"></listener>
 </listeners>
