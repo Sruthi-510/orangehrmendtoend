@@ -37,23 +37,9 @@ bat 'mvn clean compile'
 
 stage('Execute UI Tests') {
 steps {
-script {
-try {
-bat """
-mvn test ^
--DsuiteXmlFile=${params.suiteXmlFile} ^
--Dbrowser=${params.browser} ^
--Dheadless=${params.headless} ^
--Dincognito=${params.incognito} ^
--DtestUrl=${params.testUrl}
-"""
-} catch (Exception e) {
-echo "Tests failed but continuing..."
+bat "mvn test -DsuiteXmlFile=${params.suiteXmlFile} -Dbrowser=${params.browser} -Dheadless=${params.headless} -Dincognito=${params.incognito} -DtestUrl=${params.testUrl}"
 }
 }
-}
-}
-
 stage('Re-run Failed Tests') {
 steps {
 script {
