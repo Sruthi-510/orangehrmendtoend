@@ -14,6 +14,10 @@ booleanParam(name: 'headless', defaultValue: true)
 booleanParam(name: 'incognito', defaultValue: true)
 string(name: 'testUrl', defaultValue: 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login', description: 'OrangeHRM Application URL')
 }
+triggers{
+	githubPush()
+}
+
 
 stages {
 
