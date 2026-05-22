@@ -32,6 +32,10 @@ public class BaseTest {
 		dm = new DriverManager();
 		dm=new DriverManager();
 		String browser = System.getProperty("browser",browserNamexml);
+		if (browser==null) {
+			browser=browserNamexml;
+			
+		}
 		String Url = configReader.getProperty("testurl");
 		String headless = System.getProperty("headless",headlessModexml);
 		String incognito = System.getProperty("incognito",privateModexml);
