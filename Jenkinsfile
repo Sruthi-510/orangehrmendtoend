@@ -12,15 +12,14 @@ string(name: 'suiteXmlFile', defaultValue: 'testng.xml', description: 'TestNG Su
 choice(name: 'browser', choices: ['chrome', 'firefox', 'edge'])
 booleanParam(name: 'headless', defaultValue: true)
 booleanParam(name: 'incognito', defaultValue: true)
-string(name: 'testUrl', defaultValue: 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login', description: 'OrangeHRM Application URL')
-}
-triggers{
-	githubPush()
+string(name: 'testUrl', defaultValue: 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login;)
 }
 
+triggers {
+githubPush()
+}
 
 stages {
-
 stage('Clean Workspace') {
 steps {
 cleanWs()
@@ -29,52 +28,39 @@ cleanWs()
 
 stage('Checkout Code') {
 steps {
-// Pulls code directly from your OrangeHRM repository's main branch
-git branch: 'main', url: 'https://github.com/Sruthi-510/orangehrmendtoend.git';
+git branch: 'main', url: 'https://github.com/Sruthi-510/orangehrmendtoend.git;
 }
 }
 
 stage('Maven Build & Package') {
 steps {
-// Packages your code while ignoring internal framework failures
-bat 'mvn clean package -DtestFailureIgnore=true'
+bat 'mvn clean package -DskipTests'
 }
 }
 
 stage('Docker Image Build') {
 steps {
-// Builds your Docker image using the Dockerfile in your project root
 bat 'docker build -t orangehrm-automation-image .'
 }
 }
 
 stage('Docker Execution') {
 steps {
-// Cleans up any leftover containers from previous runs safely
 bat 'docker stop running-automation-container || exit 0'
 bat 'docker rm running-automation-container || exit 0'
-
-// Runs your TestNG suite completely inside Docker
 bat 'docker run --name running-automation-container orangehrm-automation-image'
+}
 }
 }
 
 post {
 always {
 echo 'Execution Completed'
-
-// Generates standard test trend charts in Jenkins
 junit 'target/surefire-reports/*.xml'
-
-// Attaches Allure reports to your build dashboard
 allure includeProperties: false, jdk: '', results: [[path: 'target/allure-results']]
 }
 success {
-echo 'All OrangeHRM Automation Tests Passed!'
-}
-failure {
-echo 'Some Automation Tests Failed.'
-}
+echo 'All Clear'
 }
 }
 }
