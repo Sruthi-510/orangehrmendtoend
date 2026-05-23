@@ -46,9 +46,14 @@ bat 'docker build -t orangehrm-automation-image .'
 
 stage('Docker Execution') {
 steps {
-bat 'docker stop running-automation-container || exit 0'
-bat 'docker rm running-automation-container || exit 0'
-bat 'docker run --name running-automation-container orangehrm-automation-image'
+bat """
+docker run --name running-automation-container \
+-e BROWSER=${params.browser} \
+-e HEADLESS=${params.headless} \
+-e INCOGNITO=${params.incognito} \
+-e SUITE_XML=${params.suiteXmlFile} \
+orangehrm-automation-image
+"""
 }
 }
 }
